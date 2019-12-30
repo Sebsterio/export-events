@@ -10,7 +10,7 @@ The messages allow the host page to scroll to the next/previous iframe, which wo
 
 ### Notes
 
-scroll-to-next-page logic is handled here as trackpad scroll inertia requires the scroll function to be debounced, which would make sending lower-level messages ('scrolled-up-at-top-edge' rather than 'prev') messy.
+Scroll-to-next-page logic is handled here as trackpad scroll inertia requires the scroll function to be debounced, which would make sending lower-level messages ('scrolled-up-at-top-edge' rather than 'prev') messy.
 
 ### Issues
 
