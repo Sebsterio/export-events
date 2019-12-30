@@ -6,7 +6,7 @@ Message is sent when window is scrolled to either vertical edge of document and 
 
 ### Intended use
 
-The messages allow the host page to scroll to the next/previous iframe, which wouldn't be possible otherwise as it wouldn't register scroll events
+The messages allow the host page to scroll to the next/previous iframe, which wouldn't be possible otherwise as it wouldn't register scroll events.
 
 ### Notes
 
@@ -19,8 +19,8 @@ Scroll-to-next-page logic is handled here as trackpad scroll inertia requires th
 attempted solutions:
 
 - window.parent: on scroll out, kill iframe script
-  _ add attribute 'sandbox': no effect;
-  _ iframe src='': no effect
+  - add attribute 'sandbox': no effect;
+  - iframe src='': no effect
 
 final solution:
 
