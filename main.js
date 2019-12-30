@@ -36,18 +36,18 @@
 		const touchendY = e.changedTouches[0].pageY;
 		const deltaY = touchendY - touchstartY;
 		if (isDocAtScrollEnd() && deltaY < -SWIPE_SENSITIVITY) {
-			window.parent.postMessage("next", "*");
+			window.parent.postMessage("down", "*");
 		} else if (isDocAtScrollStart() && deltaY > SWIPE_SENSITIVITY) {
-			window.parent.postMessage("prev", "*");
+			window.parent.postMessage("up", "*");
 		}
 		// const message =
 		// 	deltaY > SWIPE_SENSITIVITY
 		// 		? isDocAtScrollStart()
-		// 			? "prev"
+		// 			? "up"
 		// 			: ""
 		// 		: deltaY < -SWIPE_SENSITIVITY
 		// 		? isDocAtScrollEnd()
-		// 			? "next"
+		// 			? "down"
 		// 			: ""
 		// 		: "touch";
 		// if (message) window.parent.postMessage(message, "*");
@@ -75,9 +75,9 @@
 	function handleWheel(e) {
 		if (!ready) return;
 		if (isDocAtScrollEnd() && e.deltaY > 0) {
-			debouncedMessage("next");
+			debouncedMessage("down");
 		} else if (isDocAtScrollStart() && e.deltaY < 0) {
-			debouncedMessage("prev");
+			debouncedMessage("up");
 		}
 	}
 
