@@ -24,15 +24,23 @@
 
 	// ------------------- SWIPE -------------------
 
-	// distance between touchStart and touchEnd to be considered a swipe
+	// Distance between touchStart and touchEnd to be considered a swipe
 	const SWIPE_SENSITIVITY = 15;
 
+	// Max time from touchStart to touchEnd
+	const SWIPE_TIME_LIMIT = 500;
+
 	let touchstartY = 0;
+	let swiping = false;
+
 	function handleTouchStart(e) {
 		touchstartY = e.touches[0].pageY;
+		swiping = true;
+		setTimeout(() => (swiping = false), SWIPE_TIME_LIMIT);
 	}
 
 	function handleTouchEnd(e) {
+		if (!swiping) return;
 		const touchendY = e.changedTouches[0].pageY;
 		const deltaY = touchendY - touchstartY;
 		if (isDocAtScrollEnd() && deltaY < -SWIPE_SENSITIVITY) {
