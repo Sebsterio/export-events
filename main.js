@@ -28,7 +28,7 @@
 	const SWIPE_SENSITIVITY = 15;
 
 	// Max time from touchStart to touchEnd
-	const SWIPE_TIME_LIMIT = 500;
+	const SWIPE_TIME_LIMIT = 300;
 
 	let touchstartY = 0;
 	let swiping = false;
