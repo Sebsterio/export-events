@@ -5,12 +5,12 @@
 		const D = document;
 		return Math.max(
 			D.body.scrollHeight,
-			//D.documentElement.scrollHeight,
 			D.body.offsetHeight,
+			D.body.clientHeight
+			// Elements sticking out from body when (body.overflow = hiddnen) cause the below values to include the elements, preventing isDocAtScrollEnd() from firing
+			//D.documentElement.scrollHeight,
 			//D.documentElement.offsetHeight,
-			D.body.clientHeight,
-			D.documentElement.clientHeight
-			// Elements sticking out from body when (body.overflow = hiddnen) cause the above values to include the elements, preventing isDocAtScrollEnd() from firing
+			//D.documentElement.clientHeight
 		);
 	}
 
